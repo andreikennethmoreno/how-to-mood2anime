@@ -1,0 +1,12 @@
+#root {
+  text-align: center;
+}
+
+.center-container {
+  @apply mx-auto lg:w-2/4 md:w-3/4 w-[95%]
+}
+
+.mood-center-container {
+  @apply mx-auto lg:w-3/5 md:w-3/4 w-[95%]
+
+}
