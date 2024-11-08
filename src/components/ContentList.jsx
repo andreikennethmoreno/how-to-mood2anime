@@ -33,11 +33,17 @@ export default function ContentList({animeList, loading, error, page,  handleHid
         <>
             <div key={anime.mal_id}>
             <figure className=" aspect-[16/9]">
-                <iframe className="w-full h-full" width="1044" height="587" 
-                src={anime.trailer.embed_url} 
-                title={`${anime.title} Trailer`}
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>  
-                </iframe>
+                {anime.trailer?.embed_url ? (
+                    <iframe className="w-full h-full" width="1044" height="587" 
+                    src={anime.trailer.embed_url} 
+                    title={`${anime.title} Trailer`}
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>  
+                    </iframe>
+                ): (
+                    <p>Trailer does not exist</p>
+                )}
+                
+                
             </figure>
             <div className="card-body text-left">
                 <h2 className="card-title font-bold cursor-pointer">{anime.title}</h2>
